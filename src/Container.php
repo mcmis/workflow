@@ -2,8 +2,9 @@
 
 namespace MCMIS\Workflow;
 
+use MCMIS\Contracts\WorkFlow;
 
-class Container
+class Container implements WorkFlow
 {
 
     private $allowed_status = [

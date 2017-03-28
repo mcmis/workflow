@@ -11,17 +11,11 @@
     ],
     "require": {
         "php": ">=5.5.9",
-        "mcmis/base" : "0.5.*@dev"
+        "mcmis/base" : ">=0.5"
     },
     "autoload": {
         "psr-4": {
             "MCMIS\\Workflow\\": "src/"
         }
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "0.6.x-dev"
-        }
-    },
-    "minimum-stability": "stable"
+    }
 }

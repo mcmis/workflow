@@ -11,10 +11,10 @@ class Container implements WorkFlow
         'reader' => [],
         'admin' => [],
         'operator' => [
-            'validate', 'pending', 'discard'
+            'validate', 'pending'
         ],
         'supervisor' => [
-            'forwarded.department', 'assigned.staff', 'staff.attended', 'resolved'
+            'forwarded.department', 'assigned.staff', 'staff.attended', 'resolved', 'discard'
         ],
         'fieldworker' => [
             'assigned.staff', 'in.process', 'reschedule', 'staff.attended', 'staff.delayed'
@@ -63,32 +63,32 @@ class Container implements WorkFlow
                 break;
             case 'forwarded.department':
                 $output = [
-                    'forwarded.department'
+                    'forwarded.department', 'discard'
                 ];
                 break;
             case 'assigned.staff':
                 $output = [
-                    'assigned.staff', 'in.process', 'reschedule'
+                    'assigned.staff', 'in.process', 'reschedule', 'discard'
                 ];
                 break;
             case 'in.process':
                 $output = [
-                    'in.process', 'staff.attended'
+                    'in.process', 'staff.attended', 'discard'
                 ];
                 break;
             case 'reschedule':
                 $output = [
-                    'reschedule', 'in.process'
+                    'reschedule', 'in.process', 'discard'
                 ];
                 break;
             case 'staff.attended':
                 $output = [
-                    'staff.attended', 'resolved'
+                    'staff.attended', 'resolved', 'discard'
                 ];
                 break;
             case 'staff.delayed':
                 $output = [
-                    'staff.delayed', 'in.process', 'reschedule'
+                    'staff.delayed', 'in.process', 'reschedule', 'discard'
                 ];
                 break;
             case 'resolved':
